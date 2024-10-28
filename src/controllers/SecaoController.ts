@@ -3,7 +3,7 @@ import { AppDataSource } from "../database/AppDataSource";
 import { Secao } from "../entity/Secao";
 
 export class SecaoController {
-  static async getAll(res: Response) {
+  static async getAll(req: Request, res: Response) {
     const secaoRepository = AppDataSource.getRepository(Secao);
     const secao = await secaoRepository.find();
     res.json(secao);

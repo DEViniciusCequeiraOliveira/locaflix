@@ -1,4 +1,4 @@
-import { Double, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Double, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
 import { Secao } from "./Secao";
 
 @Entity()
@@ -6,10 +6,15 @@ export class Filme {
 
     @PrimaryGeneratedColumn()
     id: Number;
+    @Column()
     nome: String;
+    @Column()
     nota: Number;
+    @Column()
     duracao: Number;
+    @Column()
     valorAluguel: Number;
+    @Column()
     estoque: Number;
     @ManyToMany(() => Secao)
     @JoinTable()

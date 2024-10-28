@@ -3,9 +3,10 @@ import { AppDataSource } from "../database/AppDataSource";
 import { Filme } from "../entity/Filme";
 
 export class FilmeController {
-  static async getAll(res: Response) {
+  static async getAll(req: Request, res: Response) {
     const filmeRepository = AppDataSource.getRepository(Filme);
     const filme = await filmeRepository.find();
+    console.log(filme)
     res.json(filme);
   }
 

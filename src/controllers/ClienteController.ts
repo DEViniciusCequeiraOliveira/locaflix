@@ -3,7 +3,7 @@ import { AppDataSource } from "../database/AppDataSource";
 import { Cliente } from "../entity/Cliente";
 
 export class ClienteController {
-    static async getAll(res: Response) {
+    static async getAll(req: Request, res: Response) {
         const clienteRepository = AppDataSource.getRepository(Cliente);
         const cliente = await clienteRepository.find();
         res.json(cliente);
